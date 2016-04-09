@@ -1,0 +1,61 @@
+1.Gathering Infomation
+   1). Gathering public infomation from public resource.
+   2). Domain regester information.
+      Knowledge: https://www.ietf.org/rfc/rfc3912.txt
+      Commands:
+      # whois example.com
+   3). DNS record.
+      Commands:
+      # host www.example.com
+      # host -a www.example.com
+      # host -l example.com ns4.isp.com
+      # dig example.com
+      # dig example.com any
+      # dig @ns4.isp.com example.com axfr
+      # dnsenmu example.com
+        dnsenmu:
+        a. Gathering domain and sub-domain throught google.
+        b. Crack domain by dictionary.
+        c. Calculte class C network range.
+        d. Reversed search.
+        e. Multi threads.
+        f. Get the host ip address.
+        g. Domain name server.
+        h. MX record.
+      # dnsdict6 
+      # fierce -dns example.com -threads 3
+      # dmitry -iwnse targethost
+      Port scan 
+      # dmitry -p targethost -f -b
+        dmitry:
+        a. Query host whois infomation by ip
+        b. dig host infomation on netcraft.com
+        c. find target domain sub-domain
+        d. find target domain mail address.
+        f. detective target host open port.
+
+      Tools 
+      # maltego
+   4). Routing
+      Commands:
+      # tcptraceroute (traceroute)
+      # tctrace
+      Send syn to target
+      # tctrace -i eth0 -d www.example.com
+
+   5). Search engine
+      Commands:
+      # theharverster -d example.com -l 100 -b google
+        theharverster
+        # use google, bing, pgp linkedin, yandex, people123, jigsaw, shodan
+      # metagoofil -d example.com -l 20 -t doc,pdf -n 5 -f test.html -o test
+        metagoofil
+        # document type, .docx, .doc, .xlsx, .xls, .ods, .pptx, .ppt, .odp, .pdf
+        a. use google search engine 
+        b. download the target to local
+        c. calculate the local file metadata
+        d. save the metadata to html
+       
+     
+   
+

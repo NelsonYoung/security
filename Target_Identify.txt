@@ -1,0 +1,78 @@
+1). ping 
+   Commands:
+   # ping www.example.com
+   # ping -c 10 -i 0.1 www.example.com
+     ping arguments:
+     -c count
+     -I interface address
+     -s packet size
+     
+   # arping www.example.com (arping used in local network, or lan)
+   > # arping mac.address
+   # fping 192.168.1.1 192.168.1.100 192.168.1.107
+     fping:
+     ping those hosts at the same time.
+   # fping -g 192.168.0.0/24
+     ping the group of hosts.
+   # fping -r 1 -g 192.168.0.0/24 
+     -r retry, default 3
+     -s check the result
+   # hping3 
+     hping3
+     a. testing firewall rules
+     b. testing IDS
+     c. test TCP/IP
+     ----------------------------------------------------------------------
+         No.  |    Options  |  Full options  | Desc
+     ----------------------------------------------------------------------
+          1   |     -0      |   --raw-ip     | send oringinal ip packets
+     ----------------------------------------------------------------------  
+          2   |     -1      |   --icmp       | send icmp packets
+     ----------------------------------------------------------------------  
+          3   |     -2      |   --udp        | send udp packets
+     ----------------------------------------------------------------------  
+          4   |     -8      |   --scan       | scan mode
+     ----------------------------------------------------------------------  
+          5   |     -9      |   --listen     | listen mode
+     ----------------------------------------------------------------------  
+
+
+     ----------------------------------------------------------------------  
+          No.   |     Options      |   Name
+     ----------------------------------------------------------------------  
+          1     |     -S           |  syn
+     ----------------------------------------------------------------------  
+          2     |     -A           |  ack
+     ----------------------------------------------------------------------  
+          3     |     -R           |  rst
+     ----------------------------------------------------------------------  
+          4     |     -F           |  fin
+     ----------------------------------------------------------------------  
+          5     |     -P           |  psh
+     ----------------------------------------------------------------------  
+          6     |     -U           |  urg
+     ----------------------------------------------------------------------  
+          7     |     -X           |  xmas, fin, urg, psh
+     ----------------------------------------------------------------------  
+          8     |     -Y           |  ymas
+     ----------------------------------------------------------------------  
+     Example: ping icmp packet
+     # hping3 -1 192.168.0.103 -c 1 
+   # nping ( tcp/udp, icmp, arp, network press testing, arp poisoning, Dos attacks)
+   # alive6 ( detect ipv6)
+   # detect-new-ip6 eth0
+   # passive_discovery6 eth0
+   # nbtscan ( Windows )  
+
+2). OS fingerprinting
+   Commands:
+   # p0f
+     p0f 
+     a. own os syn mode
+     b. you can visit target syn + ack mode
+     c. you can not visit target rst mode
+     d. monitoring commucation
+   # nmap -O 192.168.0.1
+   
+    
+  

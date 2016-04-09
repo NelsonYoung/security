@@ -1,0 +1,99 @@
+TCP/IP
+Shake hands:
+    (close)                 (listen)
+                                   ___
+ /|\       |\                |      |
+  |        |  \              |      |
+  |        |    \ S          |      |
+  |        |      \ Y        |      |
+  |        |        \ N      |      |
+  |        |          \      |      |
+  |        |            \    |      |
+  |        |              \  |      S
+  |        |               _\|      H
+  |        |                /|      A
+  |        |              /  |      K
+  |------  |            /    |      E      -----------
+  | PC     |        S /      |      |     |  Server   |
+  |------  |      Y / A      |      H      -----------
+  |        |    N / C        |      A
+  |        |    / K          |      N
+  |        |  /              |      D
+  |        |/_               |      S
+  |        |\                |      |
+  |        |  \              |      |
+  |        |    \ A          |      |
+  |        |      \ C        |      |
+  |        |        \ K      |      |
+  |        |          \      |      |
+  |        |            \    |      |
+  |        |              \  |      |
+  |       \|/              _\|/    _|_ 
+  |   ESTABLISHED       ESTABLISHED
+  |        |  ---data--->>   |   
+  |        |  <<---data--    |  
+  |        |  ---data--->>   |  data transaction
+  |        |  <<---data--    |
+  |        |  ---data--->>   |   
+  |        |                 |    _____
+  |        |\                |      |
+  |        |  \              |      |
+  |        |    \ F          |      |
+  |        |      \ I        |      |
+  |        |        \ N      |      |
+  |        |          \      |      |
+  |        |            \    |      |
+  |       \|/             \  |      |
+  |    FIN-WAIT-1          _\|      |
+  |        |                /|      |
+  |        |              /  |      R
+  |        |          D /    |      E
+  |        |        A /      |      L
+  |        |      T / A      |      E 
+  |        |    A / C        |      A 
+  |        |    / K          |      S
+  |        |  /             \|/     E 
+  |        |/_           CLOSE-WAIT |
+  |        |                /|      |
+  |       \|/             /  |      |
+  |     FIN-WAIT-2    F /    |      |
+  |        |        I /      |      |
+  |        |      N /        |      |
+  |        |      /          |      |
+  |        |    /            |      |
+  |        |  /             \|/     |
+  |        |/_            LAST-ACK  |
+  |        |\                |      |
+  |        |  \              |      |
+  |        |    \ A          |      |
+  |        |      \ C        |      |
+  |        |        \ K      |      |
+  |        |          \      |      |
+  |        |            \    |      |
+  |        |              \  |      |
+  |       \|/               _\|/    |
+  |     TIME-WAIT          CLOSE    |
+  |________|                      __|__  
+
+1) nmap
+2) unicornscan
+   commands:
+   # unicornscan -m U -Iv 192.168.0.1:1-65535 -r 10000
+3) zenmap
+4)amap -bq 192.168.0.106 22
+5)nbtscan 192.168.0.1-253
+  nbtscan -hv 192.168.0.1
+6) snmp emun
+   onesixtyone 192.168.0.1
+   onesixtyone -d 192.168.0.1
+   snmpcheck -t 192.168.0.1
+
+7) VPN
+   type:
+       ipsec-vpn, openvpn, ssl-vpn
+   Protocol:
+       Authentication Headers(AH)
+       Encapsulating Security Payloads(ESP)
+       Internet Key Exchange(IKE)
+    
+   ike-scan
