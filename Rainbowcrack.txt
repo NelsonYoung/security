@@ -1,0 +1,25 @@
+rtgen
+--options:
+  hash algorithm: md5
+  charset: loweralpha
+  plaintext_len_min: 1
+  plaintext_len_max: 5
+  rainbow_table_index: 0
+  rainbow_chain_length: 2000
+  rainbow_chain_count: 80000
+  part_index 0
+
+example:
+  rainbow table 1:
+  rtgen md5 loweralpha 1 5 0 2000 8000 testing
+
+  rainbow table 2:
+  rtgen md5 loweralpha 1 5 1 2000 8000 0
+
+
+rtsort md5_loweralpha#1-5_0_2000x8000_0.rt
+rtsort md5_loweralpha#1-5_1_2000x8000_0.rt
+
+rcrack
+--Usage:
+   rcrack /usr/share/rainbowcrack/*.rt -h ab56b4d92b40713acc5af89985d4b786
