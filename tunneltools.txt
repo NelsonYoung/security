@@ -1,0 +1,27 @@
+dns2tcp
+dns2tcpd
+dns2tcpc
+
+iodine
+example:
+  server: iodine -f -P passworkd 192.168.0.106 www.fuck2019.com
+  client: iodine -f -P passworkd www.fuck2019.com
+
+ncat
+example:
+  Server: ncat -l 1337 -e /bin/bash
+  Client: ncat localhost 1337
+ 
+
+proxychains
+
+ptunnel
+  ptunnel -x -p ptunnel.example.com -lp 2222 -da ssh.example.org -dp 22
+  ssh localhost -p 2222
+
+socat - TCP4:192.168.0.1:80
+HEAD / HTTP/1.0
+
+sslh
+
+stunnel4

